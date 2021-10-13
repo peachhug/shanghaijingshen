@@ -1,0 +1,134 @@
+<div class="top">
+    <div class="main">
+        <stl:a topLevel="4" class="logo" title="{Stl.SiteName}">
+            <img src="{Stl.logo}">
+            <span class="s1">{channel.title}</span>
+        </stl:a>
+        <span class="menu2" id="menu2"><a href="javascript:void(0)">&nbsp;</a></span>
+        <a href="{Stl.SiteUrl}/" class="cd_zz y5">返回主站</a>
+        <div class="ks_xz y5">
+            科室导航
+            <div class="txtk" style="display: none;">
+                <div class="txtkn fix">
+                    <i></i>
+                    <div class="ks_lm1">
+
+                        <a href="javascript:void(0)" class="on">
+                            <stl:channel type="title" channelindex="gdl"></stl:channel>
+                        </a>
+
+
+                        <a href="javascript:void(0)">
+                            <stl:channel type="title" channelindex="hpl"></stl:channel>
+                        </a>
+
+                        <a href="javascript:void(0)">
+                            <stl:channel type="title" channelindex="cjl"></stl:channel>
+                        </a>
+
+
+                    </div>
+
+                    <div class="ks_lm1_lb" style="display: block;">
+                        <stl:channels channelindex="gdl">
+                            <h5 class="md10">{channel.title}</h5>
+                            <stl:channels>
+                                <stl:a>{Channel.Title}</stl:a>
+                            </stl:channels>
+                        </stl:channels>
+                    </div>
+
+                    <div class="ks_lm1_lb" style="display: none;">
+                        <stl:channels channelindex="hpl">
+                            <h5 class="md10">{channel.title}</h5>
+                            <stl:channels>
+                                <stl:a>{Channel.Title}</stl:a>
+                            </stl:channels>
+                        </stl:channels>
+
+                    </div>
+                    <div class="ks_lm1_lb" style="display: none;">
+                        <stl:channels channelindex="cjl">
+                            <h5 class="md10">{channel.title}</h5>
+                            <stl:channels>
+                                <stl:a>{Channel.Title}</stl:a>
+                            </stl:channels>
+                        </stl:channels>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function() {
+                    $(".ks_xz").hover(function() {
+                        $(this).find(".txtk").show();
+                    }, function() {
+                        $(this).find(".txtk").hide();
+                    });
+                    $(".ks_lm1_lb").hide().first().show();
+                    $(".ks_lm1 a").click(function() {
+                        $(this).addClass("on");
+                        $(this).siblings().removeClass("on");
+                        var index = $(this).index();
+                        $(".ks_lm1_lb").hide().eq(index).show();
+                    });
+
+                });
+            </script>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id=navk>
+    <div class="main">
+        <ul class="menu menu_ks">
+            <!--当前栏目请在Li里引用on-->
+            <li><stl:a topLevel="4"  class="dbt">科室首页</stl:a></li>
+            <stl:channels topLevel="4">
+                <stl:if type="UpChannelOrSelf">
+                    <stl:yes>
+                        <li class="on">
+                            <stl:a class="dbt">{Channel.Title}</stl:a>
+                        </li>
+                    </stl:yes>
+                    <stl:no>
+                        <li>
+                            <stl:a class="dbt">{Channel.Title}</stl:a>
+                        </li>
+                    </stl:no>
+                </stl:if>
+            </stl:channels>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="top_jg"></div>
+<SCRIPT type=text/javascript>
+    $(document).ready(function() {
+        var pk=document.body.clientWidth;
+        if(pk<1200){
+//手机菜单
+            $("#menu2").click(function(){
+                if ($("#navk").css("display") == "none") {
+                    $(this).find("a").addClass("on");
+                    $("#navk").css("display", "block").stop().animate({left: '0%'});
+                }
+                else {
+                    $(this).find("a").removeClass("on");
+                    $("#navk").css("display", "none").stop().animate({left: '100%'});
+                }
+            });
+        }
+        else{
+            $(".menu li").hover(function() {
+                $(this).find("dl").css("display","block");
+            },function(){
+
+                $(this).find("dl").css("display","none");
+            });
+
+        };
+    });
+    //-->
+</SCRIPT>​

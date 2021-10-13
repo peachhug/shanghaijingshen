@@ -1,0 +1,51 @@
+<div class="ban">
+    <stl:container context="Channel">
+        <div class="ban_pic" style="background-image: url('{stl:channel type=ImageUrl topLevel=1}')">
+            <div class="ban_nr">
+                <h1 class="bt md20"><stl:channel type="Title" topLevel="1"></stl:channel></h1>
+                <p><stl:channel type="lmms" topLevel="1"></stl:channel></p>
+            </div>
+        </div>
+    </stl:container>
+    <div class="lm1_k">
+        <div class="lm1_bt"><a href="javascript:void(0)" id="cd_lm">{Channel.Title}</a></div>
+        <ul class="lm2 main" id="lm">
+            <stl:channels topLevel="1">
+                <stl:if type="UpChannelOrSelf">
+                    <stl:yes>
+                        <li>
+                            <stl:a class="on">{Channel.Title}</stl:a>
+                            <div class="txtk">
+                                <stl:channels>
+                                    <stl:a>{Channel.Title}</stl:a>
+                                </stl:channels>
+                            </div>
+                        </li>
+                    </stl:yes>
+                    <stl:no>
+                        <li>
+                            <stl:a>{Channel.Title}</stl:a>
+                            <div class="txtk">
+                                <stl:channels>
+                                    <stl:a>{Channel.Title}</stl:a>
+                                </stl:channels>
+                            </div>
+                        </li>
+                    </stl:no>
+                </stl:if>
+            </stl:channels>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">
+    $("#cd_lm").click(function () {
+        if ($("#lm").css("display") == "none") {
+            $(this).addClass("on");
+            $("#lm").slideDown("slow");
+        } else {
+            $(this).removeClass("on");
+            $("#lm").slideUp("slow");
+        }
+    });
+</script>​

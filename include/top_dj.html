@@ -1,0 +1,72 @@
+<div class="top xw">
+    <div class="main2">
+        <a href="index.html" class="logo" title="">
+            <img src="images/logo.png">
+            <span class="s_title">党的建设</span>
+        </a>
+        <span class="menu2" id="menu2"><a href="javascript:void(0)">&nbsp;</a></span>
+        <a href="index.shtml" class="btn btn-danger">返回主站</a>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id=navk class="xw ks">
+    <div class="main2">
+    <ul class="menu menu_dj">
+        <!--当前栏目请在Li里引用on-->
+        <li class="on"><a href="index.html" class="dbt">首页</a></li>
+        <li><a href="index.html" class="dbt">党委概况</a></li>
+        <li><a href="index.html" class="dbt">党建新闻</a></li>
+        <li><a href="index.html" class="dbt">组织建设</a></li>
+        <li><a href="index.html" class="dbt">分党校培训</a></li>
+        <li><a href="index.html" class="dbt">干部管理</a></li>
+        <li><a href="index.html" class="dbt">统战工作</a></li>
+        <li><a href="index.html" class="dbt">党风廉政</a></li>
+        <li><a href="index.html" class="dbt">职工之家</a></li>
+        <li><a href="index.html" class="dbt">青年风采</a></li>
+        <li><a href="index.html" class="dbt">荣誉榜</a></li>
+    </ul>
+    <div class="clear"></div>
+    </div>
+</div>
+<div class="top_jg xw"></div>
+<SCRIPT type=text/javascript>
+    $(document).ready(function () {
+        var pk = document.body.clientWidth;
+        if (pk < 1200) {
+//手机菜单
+            $("#menu2").click(function () {
+                if ($("#navk").css("display") == "none") {
+                    $(this).find("a").addClass("on");
+                    $("#navk").css("display", "block").stop().animate({left: '0%'});
+                }
+                else {
+                    $(this).find("a").removeClass("on");
+                    $("#navk").css("display", "none").stop().animate({left: '100%'});
+                }
+            });
+        }
+        else {
+            // $(".menu li").hover(function () {
+            //     $(this).find("dl").css("display", "block");
+            // }, function () {
+            //
+            //     $(this).find("dl").css("display", "none");
+            // });
+
+            $(".menu li").hover(function() {
+                $(this).find("dl").stop().css("display","block").animate({
+                    opacity:'1',
+                    top:'45px'
+                });
+            },function(){
+
+                $(this).find("dl").stop().css("display","none").animate({
+                    opacity:'0',
+                    top:'50px'
+                });
+            });
+
+        };
+    });
+    //-->
+</SCRIPT>

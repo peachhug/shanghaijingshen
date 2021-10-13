@@ -1,0 +1,135 @@
+<div class="top">
+    <div class="main">
+        <a href="index.html" class="logo" title="">
+            <img src="images/logo2.png">
+            <span class="s1">神经内科</span>
+        </a>
+        <span class="menu2" id="menu2"><a href="javascript:void(0)">&nbsp;</a></span>
+        <a href="{Stl.SiteUrl}/" class="cd_zz y5">返回主站</a>
+        <div class="ks_xz y5">
+            科室导航
+            <div class="txtk" style="display: none;">
+                <div class="txtkn fix">
+                    <i></i>
+                    <div class="ks_lm1">
+
+                        <a href="javascript:void(0)" class="on">
+                            内科
+                        </a>
+
+
+                        <a href="javascript:void(0)">
+                            外科
+                        </a>
+
+                        <a href="javascript:void(0)">
+                            门急诊 辅助科室
+                        </a>
+
+
+                    </div>
+
+                    <div class="ks_lm1_lb" style="display: block;">
+
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+
+                    </div>
+
+                    <div class="ks_lm1_lb" style="display: none;">
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+
+                    </div>
+                    <div class="ks_lm1_lb" style="display: none;">
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+                        <a href="#">消化内科</a>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function() {
+                    $(".ks_xz").hover(function() {
+                        $(this).find(".txtk").show();
+                    }, function() {
+                        $(this).find(".txtk").hide();
+                    });
+                    $(".ks_lm1_lb").hide().first().show();
+                    $(".ks_lm1 a").click(function() {
+                        $(this).addClass("on");
+                        $(this).siblings().removeClass("on");
+                        var index = $(this).index();
+                        $(".ks_lm1_lb").hide().eq(index).show();
+                    });
+
+                });
+            </script>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id=navk>
+    <div class="main">
+        <ul class="menu menu_ks">
+            <!--当前栏目请在Li里引用on-->
+            <li class="on"><a href="科室子站.html" class="dbt">科室首页</a></li>
+            <li><a href="科室单页.html" class="dbt">科室介绍</a></li>
+            <li><a href="科室专家.html" class="dbt">诊疗特色</a></li>
+            <li><a href="科室新闻列表.html" class="dbt">科室动态</a></li>
+            <li><a href="科室专家.html" class="dbt">专家团队</a></li>
+            <li><a href="科室单页.html" class="dbt">联系方式</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="top_jg"></div>
+<SCRIPT type=text/javascript>
+    $(document).ready(function() {
+        var pk=document.body.clientWidth;
+        if(pk<1200){
+//手机菜单
+            $("#menu2").click(function(){
+                if ($("#navk").css("display") == "none") {
+                    $(this).find("a").addClass("on");
+                    $("#navk").css("display", "block").stop().animate({left: '0%'});
+                }
+                else {
+                    $(this).find("a").removeClass("on");
+                    $("#navk").css("display", "none").stop().animate({left: '100%'});
+                }
+            });
+        }
+        else{
+            $(".menu li").hover(function() {
+                $(this).find("dl").css("display","block");
+            },function(){
+
+                $(this).find("dl").css("display","none");
+            });
+
+        };
+    });
+    //-->
+</SCRIPT>

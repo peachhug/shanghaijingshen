@@ -1,0 +1,86 @@
+<div class="foot">
+    <div class="main">
+        <div class="link_list mh md20">
+            <div class="mh md15">友情链接：</div>
+            <select onchange="window.open(this.options[this.selectedIndex].value)" name="select1" class="form-control">
+
+                <option value="#">科室或专家个人网站</option>
+
+                <option value="http://azfs.azyfy.com/XAFS/">安中风湿网</option>
+
+                <option value="http://xjs.azyfy.com/">徐经世国医大师传承工作室</option>
+
+                <option value="https://www.azyfy.com/list/175/83353.html">周玉朱名老中医传承工作室</option>
+
+                <option value="http://wangzhengah.haodf.com/">王正医生个人网站</option>
+
+                <option value="http://baoyuancheng.haodf.com/">鲍远程医生个人网站</option>
+
+                <option value="http://zhangnianzhi.haodf.com/">张念志医生个人网站</option>
+
+                <option value="http://zzw555.haodf.com/">周章武医生个人网站</option>
+            </select>
+            <select onchange="window.open(this.options[this.selectedIndex].value)" name="select2" class="form-control">
+                <option value="#">医疗卫生单位网站</option>
+
+
+                <option value="http://www.sgyy.cn/">上海中医药大学附属曙光医院</option>
+
+                <option value="http://www.longhua.net/">上海中医药大学附属龙华医院</option>
+
+                <option value="http://www.jshtcm.com/">江苏省中医院</option>
+
+                <option value="http://www.gdhtcm.com">广东省中医院</option>
+
+                <option value="http://www.ayfy.com/">安徽医科大学第一附属医院</option>
+
+                <option value="http://www.ahslyy.com.cn/">安徽省立医院</option>
+
+                <option value="http://www.yjsyy.com/">皖南医学院弋矶山医院</option>
+
+                <option value="http://www.hfyy.cn/">合肥市第一人民医院</option>
+
+            </select>
+            <select onchange="window.open(this.options[this.selectedIndex].value)" name="select3" class="form-control">
+                <option value="#">主管部门网站</option>
+                <option value="http://www.ahtcm.edu.cn/">安徽中医药大学</option>
+
+                <option value="http://wjw.ah.gov.cn/">安徽省卫生健康委员会</option>
+
+                <option value="http://www.satcm.gov.cn/">国家中医药管理局</option>
+
+                <option value="http://www.nhc.gov.cn/">国家卫生健康委员会</option>
+
+                <option value="http://www.ahedu.gov.cn">教育厅</option>
+
+            </select>
+            <select onchange="window.open(this.options[this.selectedIndex].value)" name="select3" class="form-control">
+                <option value="#">分院、医联体单位网站链接</option>
+                <option value="http://www.cfxzyy.com/">长丰县中医院</option>
+
+            </select>
+
+        </div>
+        <div class="d1 left">
+            {Stl.bq}
+            <div class="d1n">
+                <a href="http://bszs.conac.cn/sitename?method=show&id=26E665931B7614F4E053012819ACDA43" target="_blank"><img src="{Stl.SiteUrl}/images/f1.png" ></a>
+            </div>
+        </div>
+        <div class="d2 right">
+            <img src="{Stl.ewm}">
+            <p>扫码关注官方微信</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    function beforeSubmit(form){
+        if(form.word.value==''){
+            alert('请输入您要搜索的关键词！');
+            form.word.focus();
+            return false;
+        }
+        return true;
+    }
+</script>

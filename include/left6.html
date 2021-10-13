@@ -1,0 +1,26 @@
+<h3 class="h3_bt1">科教之窗</h3>
+<div class="lm1_bt"><a href="javascript:void(0)" id="cd_lm">科研动态</a></div>
+<ul class="lm1" id="lm">
+    <li><a href="" class="on">科研动态</a></li>
+    <li><a href="">学术队伍</a></li>
+    <li><a href="">科研成果</a></li>
+    <li><a href="">学术活动</a></li>
+    <li><a href="">资料下载</a></li>
+</ul>
+<script type="text/javascript">
+    $("#cd_lm").click(function(){
+        if($("#lm").css("display")=="none"){
+            $(this).addClass("on");
+            $("#lm").slideDown("slow");
+        }
+        else{
+            $(this).removeClass("on");
+            $("#lm").slideUp("slow");
+        }
+    });
+</script>
+
+
+
+
+

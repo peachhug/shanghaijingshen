@@ -1,0 +1,135 @@
+<div class="top">
+    <div class="main">
+        <a href="{Stl.SiteUrl}/" class="logo" title="{Stl.SiteName}">
+            <img src="{Stl.logo}" alt="{Stl.SiteName}">
+        </a>
+        <span class="menu2" id="menu2"><a href="javascript:void(0)">&nbsp;</a></span>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id=navk>
+    <div class="main">
+        <div class="top_ewm">
+            <div class="item">
+                <img src="{Stl.ewm}">
+                <p>医院微信公众号</p>
+            </div>
+            <div class="item">
+                <img src="{Stl.ewm}">
+                <p>医院微信视频号</p>
+            </div>
+
+        </div>
+        <div class="yy_nav">
+            <a href="">OA办公系统</a><!--|<a href="">English</a>-->
+        </div>
+        <div class="ss">
+            <form action="{Stl.SiteUrl}/search.html" method="get" id="search-form">
+                <input type="text" name="word" class="ss_txt form-control" onFocus="if(this.value=='请输入关键字') {this.value='';}" onBlur="if(this.value=='') {this.value='请输入关键字';}" value="请输入关键字" />
+                <input type="submit" value=" " class="ss_an"  />
+            </form>
+        </div>
+        <ul class="menu">
+            <!--当前栏目请在Li里引用on-->
+            <li><a href="{Stl.SiteUrl}/" class="dbt">首页</a></li>
+            <stl:channels topLevel="0" startNum="1" totalNum="8">
+                <stl:if testType="UpChannelOrSelf">
+                    <stl:successTemplate>
+                        <li class="on">
+                            <stl:if type="LinkUrl" op="NotEmpty">
+                                <stl:yes>
+                                    <stl:a target="_blank" class="dbt">{Channel.Title}</stl:a>
+                                </stl:yes>
+                                <stl:no>
+                                    <stl:a class="dbt">{Channel.Title}</stl:a>
+                                </stl:no>
+                            </stl:if>
+                            <dl>
+                                <stl:channels>
+                                    <dd>
+                                        <stl:if type="LinkUrl" op="NotEmpty">
+                                            <stl:yes>
+                                                <stl:a target="_blank">{Channel.Title}</stl:a>
+                                            </stl:yes>
+                                            <stl:no>
+                                                <stl:a>{Channel.Title}</stl:a>
+                                            </stl:no>
+                                        </stl:if>
+                                    </dd>
+                                </stl:channels>
+                            </dl>
+                        </li>
+                    </stl:successTemplate>
+                    <stl:failureTemplate>
+                        <li>
+                            <stl:if type="LinkUrl" op="NotEmpty">
+                                <stl:yes>
+                                    <stl:a target="_blank" class="dbt">{Channel.Title}</stl:a>
+                                </stl:yes>
+                                <stl:no>
+                                    <stl:a class="dbt">{Channel.Title}</stl:a>
+                                </stl:no>
+                            </stl:if>
+                            <dl>
+                                <stl:channels>
+                                    <dd>
+                                        <stl:if type="LinkUrl" op="NotEmpty">
+                                            <stl:yes>
+                                                <stl:a target="_blank">{Channel.Title}</stl:a>
+                                            </stl:yes>
+                                            <stl:no>
+                                                <stl:a>{Channel.Title}</stl:a>
+                                            </stl:no>
+                                        </stl:if>
+                                    </dd>
+                                </stl:channels>
+                            </dl>
+                        </li>
+                    </stl:failureTemplate>
+                </stl:if>
+            </stl:channels>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="top_jg"></div>
+<SCRIPT type=text/javascript>
+    $(document).ready(function () {
+        var pk = document.body.clientWidth;
+        if (pk < 1200) {
+//手机菜单
+            $("#menu2").click(function () {
+                if ($("#navk").css("display") == "none") {
+                    $(this).find("a").addClass("on");
+                    $("#navk").css("display", "block").stop().animate({left: '0%'});
+                }
+                else {
+                    $(this).find("a").removeClass("on");
+                    $("#navk").css("display", "none").stop().animate({left: '100%'});
+                }
+            });
+        }
+        else {
+            // $(".menu li").hover(function () {
+            //     $(this).find("dl").css("display", "block");
+            // }, function () {
+            //
+            //     $(this).find("dl").css("display", "none");
+            // });
+
+            $(".menu li").hover(function() {
+                $(this).find("dl").stop().css("display","block").animate({
+                    opacity:'1',
+                });
+            },function(){
+
+                $(this).find("dl").stop().css("display","none").animate({
+                    opacity:'0',
+                });
+            });
+
+        };
+    });
+    //-->
+</SCRIPT>​

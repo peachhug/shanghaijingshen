@@ -1,0 +1,23 @@
+    <h3 class="h3_bt1">医院概况</h3>
+    <div class="lm1_bt"><a href="javascript:void(0)" id="cd_lm">医院简介</a></div>
+    <ul class="lm1" id="lm">
+        <li><a href="医院简介.shtml" class="on">医院简介</a></li>
+        <li><a href="历届领导.shtml">历届领导</a></li>
+        <li><a href="组织架构.shtml">组织架构</a></li>
+        <li><a href="历史沿革.shtml">历史沿革</a></li>
+        <li><a href="医院荣誉.shtml">医院荣誉</a></li>
+        <li><a href="医院环境.shtml">医院环境</a></li>
+        <li><a href="index.shtml">规章制度</a></li>
+    </ul>
+<script type="text/javascript">
+    $("#cd_lm").click(function(){
+        if($("#lm").css("display")=="none"){
+            $(this).addClass("on");
+            $("#lm").slideDown("slow");
+        }
+        else{
+            $(this).removeClass("on");
+            $("#lm").slideUp("slow");
+        }
+    });
+</script>

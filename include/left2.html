@@ -1,0 +1,26 @@
+<h3 class="h3_bt1">就医指南</h3>
+<div class="lm1_bt"><a href="javascript:void(0)" id="cd_lm">预约挂号</a></div>
+<ul class="lm1" id="lm">
+    <li><a href="" class="on">预约挂号</a></li>
+    <li><a href="">门急诊、就医须知</a></li>
+    <li><a href="门诊排班表.shtml">门诊排班表</a></li>
+    <li><a href="">住院流程</a></li>
+    <li><a href="">医保政策</a></li>
+    <li><a href="停诊信息.shtml">停诊信息</a></li>
+    <li><a href="来院导航.shtml">来院导航</a></li>
+    <li><a href="">楼层信息</a></li>
+    <li><a href="报告查询.shtml">报告查询</a></li>
+    <li><a href="">患者来信</a></li>
+</ul>
+<script type="text/javascript">
+    $("#cd_lm").click(function(){
+        if($("#lm").css("display")=="none"){
+            $(this).addClass("on");
+            $("#lm").slideDown("slow");
+        }
+        else{
+            $(this).removeClass("on");
+            $("#lm").slideUp("slow");
+        }
+    });
+</script>

@@ -1,0 +1,21 @@
+<h3 class="h3_bt1">新闻中心</h3>
+<div class="lm1_bt"><a href="javascript:void(0)" id="cd_lm">通知公告</a></div>
+<ul class="lm1" id="lm">
+    <li><a href="标题时间_新闻列表.shtml" class="on">通知公告</a></li>
+    <li><a href="图片加摘要_新闻列表.shtml">医院新闻</a></li>
+    <li><a href="图片加标题_新闻列表.shtml">专题报道</a></li>
+    <li><a href="">政策法规</a></li>
+    <li><a href="">行业资讯</a></li>
+</ul>
+<script type="text/javascript">
+    $("#cd_lm").click(function(){
+        if($("#lm").css("display")=="none"){
+            $(this).addClass("on");
+            $("#lm").slideDown("slow");
+        }
+        else{
+            $(this).removeClass("on");
+            $("#lm").slideUp("slow");
+        }
+    });
+</script>

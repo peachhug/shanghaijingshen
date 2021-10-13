@@ -1,0 +1,102 @@
+<div class="top">
+    <div class="main">
+        <a href="{Stl.SiteUrl}/" class="logo" title="{Stl.seotitle}">
+            <img src="{Stl.logo}" alt="{Stl.seotitle}">
+        </a>
+        <span class="menu2" id="menu2"><a href="javascript:void(0)">&nbsp;</a></span>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id=navk>
+    <div class="main">
+        <div class="top_r">
+            <div class="nav_top">
+                <a href="https://www.azyfy.com/index.htm" class="a1">大众版</a>
+                <a href="{Stl.SiteUrl}/" class="a2 on">患者版</a>
+                <a href="" class="a3">English</a>
+                <a href="{Stl.hlwyy_url}" class="a4">互联网医院</a>
+            </div>
+            <div class="ss">
+                <form action="{Stl.SiteUrl}/search.html" method="get" onSubmit="return beforeSubmit(this);">
+                    <input name="word" type="text" class="ss_txt form-control" placeholder="请输入关键字"/>
+                    <input type="submit" value=" " class="ss_an"/>
+                </form>
+            </div>
+        </div>
+        <ul class="menu">
+            <!--当前栏目请在Li里引用on-->
+            <li><a href="{Stl.SiteUrl}/" class="dbt">首页</a></li>
+            <stl:channels topLevel="0" startNum="1" totalNum="9">
+                <stl:if testType="UpChannelOrSelf">
+                    <stl:successTemplate>
+                        <li class="on">
+                            <stl:a class="dbt">{Channel.Title}</stl:a>
+                            <dl>
+                                <stl:channels>
+                                    <dd>
+                                        <stl:a>{Channel.Title}</stl:a>
+                                    </dd>
+                                </stl:channels>
+                            </dl>
+                        </li>
+                    </stl:successTemplate>
+                    <stl:failureTemplate>
+                        <li>
+                            <stl:a class="dbt">{Channel.Title}</stl:a>
+                            <dl>
+                                <stl:channels>
+                                    <dd>
+                                        <stl:a>{Channel.Title}</stl:a>
+                                    </dd>
+                                </stl:channels>
+                            </dl>
+                        </li>
+                    </stl:failureTemplate>
+                </stl:if>
+            </stl:channels>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="top_jg"></div>
+<SCRIPT type=text/javascript>
+    $(document).ready(function () {
+        var pk = document.body.clientWidth;
+        if (pk < 1200) {
+//手机菜单
+            $("#menu2").click(function () {
+                if ($("#navk").css("display") == "none") {
+                    $(this).find("a").addClass("on");
+                    $("#navk").css("display", "block").stop().animate({left: '0%'});
+                } else {
+                    $(this).find("a").removeClass("on");
+                    $("#navk").css("display", "none").stop().animate({left: '100%'});
+                }
+            });
+        } else {
+            // $(".menu li").hover(function () {
+            //     $(this).find("dl").css("display", "block");
+            // }, function () {
+            //
+            //     $(this).find("dl").css("display", "none");
+            // });
+
+            $(".menu li").hover(function () {
+                $(this).find("dl").stop().css("display", "block").animate({
+                    opacity: '1',
+                    top: '60px'
+                });
+            }, function () {
+
+                $(this).find("dl").stop().css("display", "none").animate({
+                    opacity: '0',
+                    top: '60px'
+                });
+            });
+
+        }
+        ;
+    });
+    //-->
+</SCRIPT>​

@@ -1,0 +1,40 @@
+<div class="ban">
+    <div class="main">
+        <div class="dqwz mh md20">您现在的位置：
+            <stl:location separator=" > "></stl:location>
+        </div>
+        <h2 class="text-info bt mh text-center md20">
+            <stl:channel type="Title" topLevel="1"></stl:channel>
+        </h2>
+        <div class="lm1_bt"><a href="javascript:void(0)" id="cd_lm">{channel.title}</a></div>
+        <ul class="lm2 mh" id="lm">
+            <stl:channels topLevel="1">
+                <stl:if type="UpChannelOrSelf">
+                    <stl:yes>
+                        <li>
+                            <stl:a class="on">{Channel.Title}</stl:a>
+
+                        </li>
+                    </stl:yes>
+                    <stl:no>
+                        <li>
+                            <stl:a>{Channel.Title}</stl:a>
+                        </li>
+                    </stl:no>
+                </stl:if>
+            </stl:channels>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#cd_lm").click(function () {
+        if ($("#lm").css("display") == "none") {
+            $(this).addClass("on");
+            $("#lm").slideDown("slow");
+        } else {
+            $(this).removeClass("on");
+            $("#lm").slideUp("slow");
+        }
+    });
+</script>​

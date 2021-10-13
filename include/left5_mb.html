@@ -1,0 +1,30 @@
+<h3 class="h3_bt1"><stl:channel type="Title" topLevel="1"></stl:channel></h3>
+<div class="lm1_bt"><a href="javascript:void(0)" id="cd_lm">{Channel.Title}</a></div>
+<ul class="lm1" id="lm">
+    <stl:channels topLevel="1">
+        <stl:if type="UpChannelOrSelf">
+            <stl:yes>
+                <li>
+                    <stl:a class="on">{Channel.Title}</stl:a>
+                </li>
+            </stl:yes>
+            <stl:no>
+                <li>
+                    <stl:a>{Channel.Title}</stl:a>
+                </li>
+            </stl:no>
+        </stl:if>
+    </stl:channels>
+</ul>
+<script type="text/javascript">
+    $("#cd_lm").click(function(){
+        if($("#lm").css("display")=="none"){
+            $(this).addClass("on");
+            $("#lm").slideDown("slow");
+        }
+        else{
+            $(this).removeClass("on");
+            $("#lm").slideUp("slow");
+        }
+    });
+</script>
